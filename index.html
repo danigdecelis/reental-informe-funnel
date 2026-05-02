@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informe de Rentabilidad Reental 2025: Datos Reales de 112 Proyectos Tokenizados</title>
+  <meta name="description" content="112 proyectos tokenizados. 6 paises. Datos reales de rentabilidad, tiempos de cierre y comparativa con inversion tradicional. Descarga el informe completo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FCA311;
+      --orange-dark: #E3930F;
+      --orange-glow: rgba(252,163,17,0.15);
+      --dark: #0A0E1A;
+      --dark-mid: #131929;
+      --dark-card: #1A2235;
+      --dark-border: rgba(255,255,255,0.08);
+      --dark-border-strong: rgba(252,163,17,0.25);
+      --text-primary: #F5F5F0;
+      --text-secondary: rgba(245,245,240,0.65);
+      --text-muted: rgba(245,245,240,0.38);
+      --green: #22C55E;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-primary);
+      background: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,14,26,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 0 48px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { height: 30px; display: block; filter: brightness(0) invert(1); }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: transparent;
+      color: var(--orange);
+      font-family: 'Fustat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--orange); color: var(--dark); }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 80px 80px 80px;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(252,163,17,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(34,197,94,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(252,163,17,0.08);
+      border: 1px solid rgba(252,163,17,0.3);
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(34px, 3.5vw, 52px);
+      line-height: 1.1;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    /* PROOF ROW */
+    .hero-proof {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .proof-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* FORM */
+    .hero-form {
+      background: var(--dark-card);
+      border-radius: 16px;
+      padding: 36px;
+      border: 1px solid var(--dark-border-strong);
+      position: relative;
+      z-index: 2;
+    }
+    .form-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .form-label {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: block;
+      line-height: 1.3;
+    }
+    .form-sublabel {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--dark-border);
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      background: rgba(255,255,255,0.04);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus { border-color: var(--orange); background: rgba(252,163,17,0.04); }
+    .form-group input::placeholder { color: var(--text-muted); }
+    .form-submit {
+      width: 100%;
+      padding: 15px 24px;
+      background: var(--orange);
+      color: var(--dark);
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .form-privacy {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* REPORT PREVIEW BOX */
+    .report-preview {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+    }
+    .report-header {
+      background: linear-gradient(135deg, #0D1117 0%, #1C2333 100%);
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .report-tag {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--dark);
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .report-title-text {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .report-subtitle-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* DATA TABLE PREVIEW */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .data-table thead th {
+      background: rgba(255,255,255,0.04);
+      padding: 8px 14px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .data-table tbody tr {
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .data-table tbody tr:last-child { border-bottom: none; }
+    .data-table tbody td {
+      padding: 10px 14px;
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+    .data-table tbody td.td-name { color: var(--text-primary); font-weight: 600; }
+    .data-table tbody td.td-green {
+      color: var(--green);
+      font-family: 'Fustat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .data-table .blur-row td {
+      filter: blur(4px);
+      user-select: none;
+    }
+    .table-unlock {
+      background: rgba(252,163,17,0.08);
+      padding: 14px 28px;
+      text-align: center;
+      border-top: 1px solid var(--dark-border);
+      font-size: 12px;
+      color: var(--orange);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--dark-mid);
+      padding: 36px 80px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--dark-border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    /* SECTION */
+    section { padding: 80px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    h2.section-title {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.15;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.75;
+      margin-bottom: 56px;
+    }
+
+    /* WHAT'S INSIDE */
+    .inside-section { background: var(--dark-mid); }
+    .inside-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .inside-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .inside-card:hover { border-color: var(--dark-border-strong); }
+    .inside-num {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      color: var(--orange);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .inside-title {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .inside-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* WHY THIS MATTERS */
+    .comparison-section { background: var(--dark); }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .compare-col {
+      background: var(--dark-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+    }
+    .compare-col.col-loser { opacity: 0.7; }
+    .compare-header {
+      padding: 18px 24px;
+      font-family: 'Fustat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .compare-header.header-bad { background: rgba(239,68,68,0.08); color: #EF4444; }
+    .compare-header.header-good { background: rgba(34,197,94,0.08); color: var(--green); }
+    .compare-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--dark-border);
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+    /* PROJECTS */
+    .projects-section { background: var(--dark-mid); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .project-card {
+      background: var(--dark-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+    }
+    .project-img {
+      height: 140px;
+      background: linear-gradient(135deg, #1A2235 0%, #0D1117 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+    .project-country {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(10,14,26,0.85);
+      backdrop-filter: blur(4px);
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+    .project-return {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: var(--green);
+      color: var(--dark);
+      font-family: 'Fustat', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .project-info { padding: 18px; }
+    .project-name {
+      font-family: 'Fustat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .project-meta {
+      display: flex;
+      gap: 16px;
+    }
+    .meta-item { font-size: 12px; color: var(--text-muted); }
+    .meta-value { font-weight: 600; color: var(--text-secondary); }
+
+    /* TESTIMONIAL */
+    .testimonial-section { background: var(--dark); }
+    .testimonial-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border-strong);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .testimonial-quote {
+      font-family: 'Fustat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    .testimonial-quote::before { content: '"'; color: var(--orange); }
+    .testimonial-quote::after { content: '"'; color: var(--orange); }
+    .testimonial-author {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    .testimonial-role { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* CTA SECTION */
+    .cta-section { background: var(--dark-mid); }
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-inner .section-eyebrow { display: block; margin-bottom: 16px; }
+    .cta-form {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border-strong);
+      border-radius: 16px;
+      padding: 36px;
+      margin-top: 40px;
+    }
+    .cta-form .form-submit { font-size: 18px; padding: 18px 24px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--dark-border);
+      padding: 40px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    footer img { height: 26px; filter: brightness(0) invert(1); opacity: 0.5; }
+    .footer-text { font-size: 12px; color: var(--text-muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 48px 28px; gap: 40px; }
+      .stats-bar { grid-template-columns: repeat(3, 1fr); padding: 36px 28px; gap: 20px; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--dark-border); padding-bottom: 20px; }
+      .stat-item:last-child { border-bottom: none; }
+      section { padding: 56px 28px; }
+      .inside-grid { grid-template-columns: 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 16px; padding: 32px 28px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="https://reental.co/wp-content/uploads/2021/03/reental_logo.png" alt="Reental" class="nav-logo">
+  <div class="nav-right">
+    <a href="https://reental.co" class="nav-link">reental.co</a>
+    <a href="#informe" class="nav-cta">Descargar Informe</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="informe">
+  <div class="hero-content">
+    <div class="hero-badge">Informe de datos 2025</div>
+    <h1>112 Proyectos.<br><em>Sin Estimaciones.</em><br>Sin Promesas.</h1>
+    <p class="hero-sub">Rentabilidad real por proyecto, por mercado y por ano. Comparativa directa con la inversion inmobiliaria tradicional. Lo que los inversores rigurosos necesitan ver antes de decidir.</p>
+
+    <div class="hero-proof">
+      <div class="proof-item">
+        <div class="proof-dot"></div>
+        112 proyectos tokenizados con cierre verificado
+      </div>
+      <div class="proof-item">
+        <div class="proof-dot"></div>
+        6 paises analizados
+      </div>
+      <div class="proof-item">
+        <div class="proof-dot"></div>
+        Datos auditados 2021 a 2025
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-form">
+    <div class="form-eyebrow">Informe gratuito</div>
+    <label class="form-label">Accede al Informe Completo</label>
+    <p class="form-sublabel">Recibe los datos reales de los 112 proyectos cerrados. Sin registro en la plataforma. Sin compromiso de inversion.</p>
+    <form onsubmit="return false;">
+      <div class="form-group">
+        <label for="nombre">Tu nombre</label>
+        <input type="text" id="nombre" placeholder="Carlos Rodriguez" autocomplete="given-name">
+      </div>
+      <div class="form-group">
+        <label for="email">Tu email</label>
+        <input type="email" id="email" placeholder="carlos@correo.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="pais">Pais de residencia</label>
+        <input type="text" id="pais" placeholder="Espana, Mexico, Argentina..." autocomplete="country-name">
+      </div>
+      <button type="submit" class="form-submit">Descargar el Informe Completo</button>
+    </form>
+    <p class="form-privacy">Tus datos no se comparten con terceros. Recibes el informe en tu bandeja de entrada.</p>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">112</div>
+    <div class="stat-label">Proyectos cerrados</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">16,5%</div>
+    <div class="stat-label">Rentabilidad media anual</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">6</div>
+    <div class="stat-label">Paises analizados</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">+100M</div>
+    <div class="stat-label">Capital desplegado ($)</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4 anos</div>
+    <div class="stat-label">De datos historicos</div>
+  </div>
+</div>
+
+<!-- REPORT PREVIEW -->
+<section style="background: var(--dark-mid); padding: 80px;">
+  <div class="section-inner">
+    <span class="section-eyebrow">Vista previa del informe</span>
+    <h2 class="section-title">Una muestra de lo que encontraras</h2>
+    <p class="section-sub">El informe completo incluye los datos de todos los proyectos cerrados. Aqui tienes los primeros resultados.</p>
+
+    <div class="report-preview">
+      <div class="report-header">
+        <span class="report-tag">Reental</span>
+        <div class="report-title-text">Informe de Rentabilidad por Proyecto 2025</div>
+        <div class="report-subtitle-text">Datos verificados. Rentabilidad real sobre capital invertido. No estimaciones.</div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Proyecto</th>
+            <th>Mercado</th>
+            <th>Capital total</th>
+            <th>Duracion</th>
+            <th>ROI final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-name">Residencial Malaga Norte</td>
+            <td>Espana</td>
+            <td>280.000 EUR</td>
+            <td>18 meses</td>
+            <td class="td-green">14,2%</td>
+          </tr>
+          <tr>
+            <td class="td-name">Porto Alegre Comercial</td>
+            <td>Brasil</td>
+            <td>190.000 USD</td>
+            <td>12 meses</td>
+            <td class="td-green">17,8%</td>
+          </tr>
+          <tr>
+            <td class="td-name">CDMX Condesa Residencial</td>
+            <td>Mexico</td>
+            <td>340.000 USD</td>
+            <td>24 meses</td>
+            <td class="td-green">19,1%</td>
+          </tr>
+          <tr class="blur-row">
+            <td class="td-name">Proyecto Confidencial A</td>
+            <td>Espana</td>
+            <td>Disponible en informe</td>
+            <td>Disponible</td>
+            <td class="td-green">X,X%</td>
+          </tr>
+          <tr class="blur-row">
+            <td class="td-name">Proyecto Confidencial B</td>
+            <td>Argentina</td>
+            <td>Disponible en informe</td>
+            <td>Disponible</td>
+            <td class="td-green">X,X%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-unlock">Descarga el informe para acceder a los 112 proyectos completos</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section">
+  <div class="section-inner">
+    <span class="section-eyebrow">Contenido del informe</span>
+    <h2 class="section-title">Que encontraras en el informe</h2>
+    <p class="section-sub">Toda la informacion que un inversor serio necesita antes de mover capital. Sin omisiones, sin lenguaje de marketing.</p>
+
+    <div class="inside-grid">
+      <div class="inside-card">
+        <div class="inside-num">01</div>
+        <div class="inside-title">Rentabilidad por proyecto y por mercado</div>
+        <p class="inside-desc">Los datos reales de los 112 proyectos cerrados entre 2021 y 2025: ROI final sobre capital invertido, desglosado por pais, tipo de inmueble y duracion del proyecto.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">02</div>
+        <div class="inside-title">Comparativa con inversion inmobiliaria tradicional</div>
+        <p class="inside-desc">Los mismos mercados, el mismo periodo, las mismas variables. La tokenizacion frente a la compra directa, el alquiler gestionado y los fondos REIT. Numeros, no opiniones.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">03</div>
+        <div class="inside-title">Tiempos reales de cierre y liquidez</div>
+        <p class="inside-desc">Cuanto tarda en cerrarse un proyecto desde la apertura de la recaudacion. Que opciones de salida existen antes del cierre. Como funciona el mercado secundario en la practica.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">04</div>
+        <div class="inside-title">Marco regulatorio por pais</div>
+        <p class="inside-desc">Espana, Mexico, Brasil, Argentina, EEUU. Que dice la regulacion vigente sobre la tokenizacion inmobiliaria en cada mercado donde Reental opera, actualizado a 2025.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">05</div>
+        <div class="inside-title">Tributacion segun perfil de inversor</div>
+        <p class="inside-desc">Como tributa en Espana, en Mexico y en Argentina el rendimiento generado por tokens inmobiliarios. Que formularios aplican. Que errores cometen los inversores al declarar por primera vez.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-num">06</div>
+        <div class="inside-title">Analisis de riesgo y escenarios adversos</div>
+        <p class="inside-desc">Que pasa si un proyecto no alcanza el objetivo de recaudacion. Que ocurre si el mercado inmobiliario de ese pais cae. Como esta protegido el capital de los inversores. Sin suavizar las respuestas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison-section">
+  <div class="section-inner">
+    <span class="section-eyebrow">Por que este informe importa</span>
+    <h2 class="section-title">Lo que todo inversor deberia exigir antes de invertir</h2>
+    <p class="section-sub">La mayoria de plataformas de inversion alternativa publican promesas. Reental publica datos.</p>
+
+    <div class="compare-grid">
+      <div class="compare-col col-loser">
+        <div class="compare-header header-bad">Lo que suelen ofrecer otras plataformas</div>
+        <div class="compare-row">
+          <span class="compare-icon">✗</span>
+          <span>Rentabilidades proyectadas basadas en estimaciones</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon">✗</span>
+          <span>Proyectos activos sin historial de proyectos cerrados</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon">✗</span>
+          <span>Informacion legal dispersa y dificil de interpretar</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon">✗</span>
+          <span>Sin comparativa con inversion inmobiliaria tradicional</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon">✗</span>
+          <span>Apartado de riesgos redactado por el departamento legal</span>
+        </div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-header header-good">Lo que encontraras en el informe Reental</div>
+        <div class="compare-row">
+          <span class="compare-icon" style="color: var(--green);">✓</span>
+          <span>Rentabilidades reales de proyectos ya cerrados y verificados</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon" style="color: var(--green);">✓</span>
+          <span>4 anos de historial: 2021 a 2025, con los datos organizados por mercado</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon" style="color: var(--green);">✓</span>
+          <span>Marco regulatorio claro por pais, actualizado a 2025</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon" style="color: var(--green);">✓</span>
+          <span>Comparativa directa con inversion inmobiliaria tradicional</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-icon" style="color: var(--green);">✓</span>
+          <span>Analisis de riesgo real con escenarios adversos explicados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="section-inner">
+    <span class="section-eyebrow">Ejemplo de proyectos</span>
+    <h2 class="section-title">El tipo de proyectos analizados en el informe</h2>
+    <p class="section-sub">Inmuebles residenciales, comerciales e industriales en Espana, Mexico, Brasil, Argentina, EEUU y Panama.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=75" alt="Proyecto residencial Espana">
+          <span class="project-country">Espana</span>
+          <span class="project-return">+14,2%</span>
+        </div>
+        <div class="project-info">
+          <div class="project-name">Residencial Malaga Norte</div>
+          <div class="project-meta">
+            <div class="meta-item">Capital: <span class="meta-value">280K EUR</span></div>
+            <div class="meta-item">Cierre: <span class="meta-value">18 meses</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=75" alt="Proyecto Mexico">
+          <span class="project-country">Mexico</span>
+          <span class="project-return">+19,1%</span>
+        </div>
+        <div class="project-info">
+          <div class="project-name">CDMX Condesa Residencial</div>
+          <div class="project-meta">
+            <div class="meta-item">Capital: <span class="meta-value">340K USD</span></div>
+            <div class="meta-item">Cierre: <span class="meta-value">24 meses</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=600&q=75" alt="Proyecto Brasil">
+          <span class="project-country">Brasil</span>
+          <span class="project-return">+17,8%</span>
+        </div>
+        <div class="project-info">
+          <div class="project-name">Porto Alegre Comercial</div>
+          <div class="project-meta">
+            <div class="meta-item">Capital: <span class="meta-value">190K USD</span></div>
+            <div class="meta-item">Cierre: <span class="meta-value">12 meses</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="section-inner">
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Lo que me convencio de invertir en Reental fue que pude ver los numeros de proyectos reales ya cerrados antes de mover un euro. Cuando ves el historico real, la decision es mucho mas facil de tomar.</div>
+      <div class="testimonial-author">Miguel A., inversor en Reental desde 2023</div>
+      <div class="testimonial-role">Madrid, Espana</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="cta-inner">
+      <span class="section-eyebrow">Descarga gratuita</span>
+      <h2 class="section-title">Los datos estan ahi.<br>La decision es tuya.</h2>
+      <p class="section-sub" style="max-width: 500px; margin: 0 auto 0;">112 proyectos con cierre verificado. Rentabilidades reales. Marco regulatorio por pais. Sin registro en la plataforma. Sin compromiso de inversion.</p>
+
+      <div class="cta-form">
+        <label class="form-label" style="text-align: center; margin-bottom: 4px;">Accede al Informe Completo</label>
+        <p class="form-sublabel" style="text-align: center; margin-bottom: 24px;">Recibelo en tu email en menos de un minuto.</p>
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label for="cta-nombre">Tu nombre</label>
+            <input type="text" id="cta-nombre" placeholder="Carlos Rodriguez" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="cta-email">Tu email</label>
+            <input type="email" id="cta-email" placeholder="carlos@correo.com" autocomplete="email">
+          </div>
+          <button type="submit" class="form-submit">Descargar el Informe Ahora</button>
+        </form>
+        <p class="form-privacy">Tus datos no se comparten con terceros. Recibes el informe en tu bandeja de entrada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://reental.co/wp-content/uploads/2021/03/reental_logo.png" alt="Reental">
+  <div class="footer-text">2025 Reental. Plataforma regulada de inversion inmobiliaria tokenizada.</div>
+</footer>
+
+</body>
+</html>
